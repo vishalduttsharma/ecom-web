@@ -46,7 +46,7 @@ export default function Navbar() {
               <li><a href="testimonials.html">Testimonials</a></li>
               <li><a href="faq.html">Frequently Asked Questions</a></li>
               <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="terms.html">Terms</a></li>
+              <li><a href="terms.html">Terms </a></li>
               <li><a href="privacy.html">Privacy</a></li>
               <li><a href="404.html">404</a></li>
             </ul>

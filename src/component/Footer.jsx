@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="footer-main" data-aos="fade-up" data-aos-delay="100">
         <div className="row align-items-start">
 
-          <div className="col-lg-5">
+          <div className="col-lg-5 ">
             <div className="brand-section">
               <a href="index.html" className="logo d-flex align-items-center mb-4">
                 <span className="sitename">Clinic</span>
