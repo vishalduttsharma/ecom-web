@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Breadcrum({title,description}) {
   return (
@@ -21,8 +22,8 @@ export default function Breadcrum({title,description}) {
       <nav className="breadcrumbs">
         <div className="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li className="current">About</li>
+            <li><Link to="/">Home</Link></li>
+            <li className="current">{title}</li>
           </ol>
         </div>
       </nav>
