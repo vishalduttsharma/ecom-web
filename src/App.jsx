@@ -12,11 +12,12 @@ import Contactuspage from './pages/Contactuspage'
 import Errorpage from './pages/Errorpage'
 import Privacypolicy from './pages/Privacypolicy'
 import TermsAndConditionsPolicy from './pages/TermsAndConditionsPolicy'
+import Testimonialspage from './pages/Testimonialspage'
 export default function App() {
   return (
     <div>
-      <Navbar/>
       <BrowserRouter>
+       <Navbar/>
       <Routes>
         <Route path='' element={<Homepage/>}/>
         <Route path='/about' element={<Aboutpage/>}/>
@@ -26,10 +27,14 @@ export default function App() {
         <Route path='/contactus' element={<Contactuspage/>}/>
         <Route path='/privacy-policy' element={<Privacypolicy/>}/>
         <Route path='/tc' element={<TermsAndConditionsPolicy/>}/>
+        <Route path='/testimonials' element={<Testimonialspage/>}/>
+
+
         <Route path='*' element={<Errorpage/>}/>
       </Routes>
+          <Footer/>
       </BrowserRouter>
-             <Footer/>
+            
     </div>
   )
 }

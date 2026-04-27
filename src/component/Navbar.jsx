@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
-
+  let [showMenu,setshowMenu]=useState(false)
   let [SettingData,SetSettingData] = useState({
 sitename:import.meta.env.VITE_APP_SITE_NAME,
 address:import.meta.env.VITE_APP_ADDRESS,
@@ -19,34 +19,37 @@ youtube:import.meta.env.VITE_APP_YOUTUBE
   })
   return (
    <>
-   <header id="header" className="header fixed-top">
+   <header id="header" className={`header fixed-top ${ showMenu? 'mobile-nav-active':''}`}>
     <div className="topbar d-flex align-items-center dark-background">
       <div className="container d-flex justify-content-center justify-content-md-between">
         <div className="contact-info d-flex align-items-center">
 
 
-          <i className=" ms-2  bi bi-geo-alt d-flex align-items-center">
-                        <Link to={`${SettingData.map1}`} target='_blank'>{SettingData.address}</Link>
-              </i>
-
-  
-          <i className=" ms-2  bi bi-envelope d-flex align-items-center">
-                        <Link to={`mailto:${SettingData.email}`} target='_blank'>{SettingData.email}</Link>
-              </i>  
-          <i className=" ms-2  bi bi-telephone d-flex align-items-center">
-                        <Link to={`tel:${SettingData.phone}`} target='_blank'>{SettingData.phone}</Link>
-              </i>  
-          <i className=" ms-2  bi bi-whatsapp d-flex align-items-center">
-                        <Link to={`https://wa.me/${SettingData.whatsapp}`} target='_blank'>{SettingData.whatsapp}</Link>
-              </i>  
+          
+                        <Link to={`${SettingData.map1}`} target='_blank'  className='text-light d-flex me-2'>
+                        <i className=" ms-1  bi bi-geo-alt me-2"></i>
+                        <span className='d-none d-xl-block'>{SettingData.address}</span>
+                        </Link>              
+                        <Link to={`mailto:${SettingData.email}`} target='_blank'  className='text-light d-flex me-2'>
+                        <i className=" ms-1  bi bi-envelope me-2"></i>
+                        <span className='d-none d-xl-block'>{SettingData.email}</span>
+                        </Link>              
+                        <Link to={`tel:${SettingData.phone}`} target='_blank'  className='text-light d-flex me-2'>
+                        <i className=" ms-1  bi bi-telephone me-2"></i>
+                        <span className='d-none d-xl-block'>{SettingData.phone}</span>
+                        </Link>                     
+                        <Link to={`https://wa.me/${SettingData.whatsapp}`} target='_blank'  className='text-light d-flex me-2'>
+                        <i className=" ms-1 bi bi-whatsapp me-2"></i>
+                        <span className='d-none d-xl-block'>{SettingData.whatsapp}</span>
+                        </Link>
                   </div>
-        <div className="social-links d-none d-md-flex align-items-center">
-          <Link to={SettingData.twitter} target='_blank' className="twitter"><i className=" ms-2  bi bi-twitter-x"></i></Link>
-          <Link to={SettingData.facebook} target='_blank' className="facebook"><i className=" ms-2  bi bi-facebook"></i></Link>
-          <Link to={SettingData.instagram} target='_blank' className="instagram"><i className=" ms-2  bi bi-instagram"></i></Link>
-          <Link to={SettingData.linkedin} target='_blank' className="linkedin"><i className=" ms-2  bi bi-linkedin"></i></Link>
-          <Link to={SettingData.youtube} target='_blank' className="linkedin"><i className=" ms-2  bi bi-youtube"></i></Link>
-        </div>
+        <div className="social-links  d-md-flex align-items-center">
+          <Link to={SettingData.twitter} target='_blank' className="text-light"><i className="  bi bi-twitter-x"></i></Link>
+          <Link to={SettingData.facebook} target='_blank' className="text-light"><i className="   bi bi-facebook"></i></Link>
+          <Link to={SettingData.instagram} target='_blank' className="text-light"><i className="  bi bi-instagram"></i></Link>
+          <Link to={SettingData.linkedin} target='_blank' className="text-light"><i className="   bi bi-linkedin"></i></Link>
+          <Link to={SettingData.youtube} target='_blank' className="text-light"><i className="  bi bi-youtube"></i></Link>
+        </div> 
       </div>
     </div>
     {/* <!-- End Top Bar --> */}
@@ -54,51 +57,38 @@ youtube:import.meta.env.VITE_APP_YOUTUBE
     <div className="branding d-flex align-items-cente">
 
       <div className="container position-relative d-flex align-items-center justify-content-between">
-        <Link to="index.html" className="logo d-flex align-items-center">
+        <Link to="/" className="logo d-flex align-items-center">
           {/* <!-- Uncomment the line below if you also wish to use an image logo --> */}
-         <img src="assets/img/logo.webp" alt=""/> 
           <h1 className="sitename">{SettingData.sitename}</h1>
         </Link>
         <nav id="navmenu" className="navmenu">
           <ul>
-            <li><Link to="index.html" className="active">Home</Link></li>
-            <li><Link to="about.html">About</Link></li>
-            <li><Link to="departments.html">Departments</Link></li>
-            <li><Link to="services.html">Services</Link></li>
-            <li><Link to="doctors.html">Doctors</Link></li>
-            <li className="dropdown"><Link to="#"><span>More Pages</span> <i className=" ms-2  bi bi-chevron-down toggle-dropdown"></i></Link>
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/about">About</NavLink></li>
+            <li><NavLink to="/shop">Shop</NavLink></li>
+            <li><NavLink to="/features">Features</NavLink></li>
+            <li><NavLink to="/faq">Faq</NavLink></li>
+            <li><NavLink to="/testimonials">Testimonials</NavLink></li>
+            <li><NavLink to="/contactus">Contact Us</NavLink></li>
+
+
+
+            <li className="dropdown"><Link to="#"><span>VISHAL DUTT SHARMA</span> <i className=" ms-1  bi bi-chevron-down toggle-dropdown"></i></Link>
             <ul>
-              <li><Link to="department-details.html">Department Details</Link></li>
-              <li><Link to="service-details.html">Service Details</Link></li>
-              <li><Link to="appointment.html">Appointment</Link></li>
-              <li><Link to="testimonials.html">Testimonials</Link></li>
-              <li><Link to="faq.html">Frequently Asked Questions</Link></li>
-              <li><Link to="gallery.html">Gallery</Link></li>
-              <li><Link to="terms.html">Terms </Link></li>
-              <li><Link to="privacy.html">Privacy</Link></li>
-              <li><Link to="404.html">404</Link></li>
+              <li><Link to="/profile?option=profile">Profile</Link></li>
+              <li><Link to="/profile?option=wishlist">Wishlist</Link></li>
+              <li><Link to="/profile?option=order">Orders</Link></li>
+              <li><Link to="/profile?option=address">Address</Link></li>
+              <li><Link to="/cart">Cart</Link></li>
+              <li><Link to="/checkout">Checkout</Link></li>
+              <li><button className='btn ms-2'>Logout</button>
+              </li>
             </ul>
             </li>
-            <li className="dropdown"><Link to="#"><span>Dropdown</span> <i className=" ms-2  bi bi-chevron-down toggle-dropdown"></i></Link>
-              <ul>
-                <li><Link to="#">Dropdown 1</Link></li>
-                <li className="dropdown"><Link to="#"><span>Deep Dropdown</span> <i className=" ms-2  bi bi-chevron-down toggle-dropdown"></i></Link>
-                  <ul>
-                    <li><Link to="#">Deep Dropdown 1</Link></li>
-                    <li><Link to="#">Deep Dropdown 2</Link></li>
-                    <li><Link to="#">Deep Dropdown 3</Link></li>
-                    <li><Link to="#">Deep Dropdown 4</Link></li>
-                    <li><Link to="#">Deep Dropdown 5</Link></li>
-                  </ul>
-                </li>
-                <li><Link to="#">Dropdown 2</Link></li>
-                <li><Link to="#">Dropdown 3</Link></li>
-                <li><Link to="#">Dropdown 4</Link></li>
-              </ul>
-            </li>
-            <li><Link to="contact.html">Contact</Link></li>
           </ul>
-          <i className="mobile-nav-toggle d-xl-none  ms-2  bi bi-list"></i>
+          <i className={`mobile-nav-toggle d-xl-none  ms-1  bi ${showMenu?'bi-x':'bi-list'}` 
+          }
+           onClick = {()=>{setshowMenu(!showMenu)}}></i>
         </nav>
 
       </div>

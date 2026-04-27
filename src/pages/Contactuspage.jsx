@@ -7,7 +7,6 @@ export default function Contactuspage() {
     <div>
       {/* <!-- Contact Section --> */}
     <section id="contact" className="contact section">
-
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <div className="row g-5">
           <div className="col-lg-5">
@@ -21,7 +20,6 @@ export default function Contactuspage() {
                   <p>1842 Maple Avenue, Portland, Oregon 97204</p>
                 </div>
               </div>
-
               <div className="contact-info-item" data-aos="fade-up" data-aos-delay="200">
                 <div className="info-icon">
                   <i className="bi bi-envelope"></i>
@@ -45,8 +43,7 @@ export default function Contactuspage() {
               </div>
             </div>
           </div>
-
-          <div className="col-lg-7">
+          <div className="col-lg-7"> 
             <div className="contact-form-card" data-aos="fade-up" data-aos-delay="200">
               <h2>Send us a Message</h2>
               <p className="mb-4">Have questions or want to learn more? Reach out to us and our team will get back to you

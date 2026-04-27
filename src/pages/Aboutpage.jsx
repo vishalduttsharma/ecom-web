@@ -3,6 +3,7 @@ import Breadcrum from '../component/Breadcrum'
 import About from '../component/About'
 import Features from '../component/Features'
 import Testimonials from '../component/Testimonials'
+import Faq from '../component/Faq'
 
 export default function Aboutpage() {
   return (
@@ -14,6 +15,7 @@ export default function Aboutpage() {
 <About/>
 <Features/>
 <Testimonials/>
+<Faq/>
   </>
   )
 }
