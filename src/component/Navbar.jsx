@@ -70,6 +70,7 @@ youtube:import.meta.env.VITE_APP_YOUTUBE
             <li><NavLink to="/faq">Faq</NavLink></li>
             <li><NavLink to="/testimonials">Testimonials</NavLink></li>
             <li><NavLink to="/contactus">Contact Us</NavLink></li>
+            <li><NavLink to="/admin">Admin</NavLink></li>
 
 
 

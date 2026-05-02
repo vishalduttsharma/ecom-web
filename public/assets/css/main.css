@@ -1045,6 +1045,10 @@ section,
   font-size: 0.875rem;
   font-weight: 500;
 }
+.admin 
+{
+  padding-top: 120px;
+}
 
 .hero .hero-content .trust-badges .badge-item i {
   font-size: 1rem;

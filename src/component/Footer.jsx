@@ -92,7 +92,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className="col-md-6 col-12 ">
-                  <div class  Name="nav-column">
+                  <div className="nav-column">
                     <h6 className='text-light my-3'>Subscribe our Newsletter Service </h6>
                     <p>We are dedicated to providing high-quality products with a seamless shopping experience. Our mission is to make online shopping simple, fast, and reliable for everyone. With a focus on customer satisfaction, we ensure the best quality, secure payments, and timely delivery.</p>
                     <form>
